@@ -11,7 +11,7 @@ router.post(
   addProduct
 );
 
-router.get(
+router.post(
   "/product",
   passport.authenticate("jwt", { session: false }),
   upload.single("qrcode"),

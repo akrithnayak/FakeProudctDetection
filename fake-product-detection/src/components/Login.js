@@ -21,30 +21,24 @@ class Login extends Component {
     });
   }
 
-  onSubmit(event) {
-    event.preventDefault();
+  onSubmit() {
     login(this.state)
       .then((res) => {
         console.log(res.msg);
 
-        if (isAuthenticated()) {
+        if (isAuthenticated())
           this.setState({
             didRedirect: true,
           });
-        }
       })
       .catch((err) => {
         console.log(err);
       });
   }
 
-  performRedirect() {
-    return <Navigate to="/" />;
-  }
-
   render() {
-    if (this.state.didRedirect || isAuthenticated()) {
-      return this.performRedirect();
+    if (isAuthenticated() || this.state.didRedirect) {
+      return <Navigate to="/" />;
     }
     return (
       <>
@@ -61,7 +55,7 @@ class Login extends Component {
                   className="form-control"
                   placeholder="Enter email"
                   name="email"
-                  value={this.state.name}
+                  value={this.state.email}
                   onChange={(e) => this.handleChange("email", e)}
                 />
               </div>
@@ -81,7 +75,7 @@ class Login extends Component {
               <button
                 type="submit"
                 className="btn btn-dark btn-lg btn-block mt-3"
-                onClick={(e) => this.onSubmit(e)}
+                onClick={this.onSubmit}
               >
                 Log In
               </button>

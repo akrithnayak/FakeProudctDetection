@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+.home {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background-image: url("../images/home.jpg"), url("../images/mask.jpg");
+  background-blend-mode: screen;
+  background-size: 65vw, 95vw;
+  background-position: 30vw 10vh, 18vw;
+  background-repeat: no-repeat;
+}
+.name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 50px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  z-index: 100;
+}
+.name h1 {
+  position: relative;
+  color: #015b75;
+  text-decoration: none;
+  font-size: 9em;
+  font-family: "Kaushan Script", cursive;
+}
+.search {
+  margin-top: 50vh;
+  margin-left: 20px;
+  width: 100%;
+  padding: 40px 50px;
+  height: 100%;
+  z-index: 200;
+}
+
+#productId {
+  width: 400px;
+  border-radius: 99px;
+  height: 50px;
+  border: 2px solid #bf9962;
+  padding: 20px;
+}
+p {
+  font-size: 20px;
+  font-family: serif;
+  width: 400px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#imag {
+  cursor: pointer;
+  width: 400px;
+  border-radius: 99px;
+  height: 50px;
+  border: 2px solid #bf9962;
+  padding: 10px 20px;
+}

@@ -23,17 +23,14 @@ class SignUp extends Component {
     });
   }
 
-  onSubmit(event) {
-    event.preventDefault();
+  onSubmit() {
     signup(this.state)
       .then((res) => {
         console.log(res.msg);
 
-        if (isAuthenticated()) {
-          this.setState({
-            didRedirect: true,
-          });
-        }
+        this.setState({
+          didRedirect: true,
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -41,12 +38,12 @@ class SignUp extends Component {
   }
 
   performRedirect() {
-    return <Navigate to="/" />;
-  }
+    if (this.state.didRedirect) {
+      return <Navigate to="/sign-in" />;
+    }
 
-  render() {
-    if (this.state.didRedirect || isAuthenticated()) {
-      return this.performRedirect();
+    if (isAuthenticated()) {
+      return <Navigate to="/" />;
     }
     return (
       <>
@@ -100,6 +97,7 @@ class SignUp extends Component {
                   value={this.state.role}
                   onChange={(e) => this.handleChange("role", e)}
                 >
+                  <option value="-1">Select</option>
                   <option value="2">Consumer</option>
                   <option value="1">Retailer</option>
                   <option value="1">Distributor</option>
@@ -110,7 +108,7 @@ class SignUp extends Component {
               <button
                 type="submit"
                 className="btn btn-dark btn-lg btn-block mt-3"
-                onClick={(e) => this.onSubmit(e)}
+                onClick={this.onSubmit}
               >
                 Sign Up
               </button>
@@ -119,6 +117,10 @@ class SignUp extends Component {
         </div>
       </>
     );
+  }
+
+  render() {
+    return this.performRedirect();
   }
 }
 

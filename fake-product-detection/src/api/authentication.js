@@ -15,6 +15,7 @@ export const login = (credentials) => {
     .then(async (response) => {
       var data = await response.json();
       cookies.set("user", data.resObject);
+      cookies.set("token", data.token);
       return data;
     })
     .catch((err) => console.log(err));
@@ -35,6 +36,23 @@ export const signup = (credentials) => {
     .catch((err) => console.log(err));
 };
 
+export const getProduct = (product) => {
+  //   console.log(product.get("qrcode"));
+  let auth = isAuthenticated();
+  return fetch(`${API}/product`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${auth ? auth.token : ""}`,
+    },
+    body: product,
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
 export const isAuthenticated = () => {
-  return cookies.get("user");
+  return { user: cookies.get("user"), token: cookies.get("token") };
 };

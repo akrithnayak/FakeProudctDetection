@@ -1,8 +1,7 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { isAuthenticated } from "./api/authentication";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
 import Login from "./components/Login";
-import Navbar from "./components/Navbar";
 import SignUp from "./components/SignUp";
 
 function Routers() {
@@ -10,15 +9,9 @@ function Routers() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              isAuthenticated() ? <Navbar /> : <Navigate to="/sign-in" />
-            }
-          />
-          <Route exact path="/sign-in" element={<Login />} />
+          <Route exact path="/" element={<Home />} />
           <Route exact path="/sign-up" element={<SignUp />} />
+          <Route exact path="/sign-in" element={<Login />} />
         </Routes>
       </div>
     </BrowserRouter>
