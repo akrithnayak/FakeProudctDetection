@@ -4,7 +4,15 @@
   box-sizing: border-box;
 }
 body {
-  background: #1c8ef9 !important;
+  /* background-image: radial-gradient(
+    circle,
+    #072657,
+    #1a264c,
+    #222741,
+    #262736,
+    #28282b
+  ); */
+  /* background: #28282b !important; */
   min-height: 100vh;
   display: flex;
   font-weight: 400;
