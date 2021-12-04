@@ -23,9 +23,15 @@ exports.loginController = (req, res) => {
       name: result[0].name,
     };
 
+    var resObject = {
+      email: result[0].email,
+      name: result[0].name,
+      role: result[0].role,
+    };
+
     const token = jwt.sign(params, "secret");
     res.cookie("jwt", token, { expire: new Date() + 9999 });
-    return res.send({ msg: "Logged In", token });
+    return res.send({ msg: "Logged In", token, resObject });
   });
 };
 
@@ -39,4 +45,8 @@ exports.signUpController = async (req, res) => {
       return res.send({ msg: "User already exists with this mail id!!" });
     return res.send({ msg: "Signed up" });
   });
+};
+
+exports.getProfile = (req, res) => {
+  return res.send(req.user);
 };

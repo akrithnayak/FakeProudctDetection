@@ -9,8 +9,6 @@ opts.secretOrKey = "secret";
 
 passport.use(
   new JwtStrategy(opts, function (jwt_payload, done) {
-    console.log(jwt_payload);
-
     var { email } = jwt_payload;
 
     const query = `SELECT * FROM users WHERE email = '${email}'`;

@@ -7,6 +7,7 @@ const cors = require("cors");
 const app = express();
 
 const authRoutes = require("./routes/auth");
+const prodRoutes = require("./routes/products");
 
 app.use(passport.initialize());
 app.use(bodyParser.json());
@@ -14,6 +15,7 @@ app.use(cookieparser());
 app.use(cors());
 
 app.use("/", authRoutes);
+app.use("/", prodRoutes);
 
 app.listen(4000, () => {
   console.log("Server is running!!");
