@@ -54,5 +54,7 @@ export const getProduct = (product) => {
 };
 
 export const isAuthenticated = () => {
-  return { user: cookies.get("user"), token: cookies.get("token") };
+  if (cookies.get("user"))
+    return { user: cookies.get("user"), token: cookies.get("token") };
+  return null;
 };
