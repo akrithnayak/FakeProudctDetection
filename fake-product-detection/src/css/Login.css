@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+
+.login_page {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/Detect\ OP.png");
+  /* background-blend-mode: screen; */
+  background-repeat: no-repeat;
+  /* background-size: 100vw 115vh; */
+  background-color: black;
+  background-size: cover;
+  background-blend-mode: screen;
+}
+
+h3,
+label {
+  color: rgb(21, 2, 130);
+  opacity: 90%;
+}
+
+.login {
+  position: absolute;
+  top: 25%;
+  right: 10%;
+}
+
+.auth-inner {
+  background-image: url("../images/paper.png");
+  background-size: cover;
+  background-color: transparent;
+  height: 30em;
+  /* border: 5px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 6.5em;
+}
+
+.logTitle {
+  text-align: center;
+  font-family: "Rye", cursive;
+  color: crimson;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(31, 1, 89);
+  outline: none;
+}
+
+.butn {
+  width: 100%;
+}
