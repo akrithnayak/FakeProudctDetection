@@ -13,7 +13,7 @@ router.post(
   "/add/product",
   passport.authenticate("jwt", { session: false }),
   (req, res, next) => {
-    if (!req.user || req.user.role > 1)
+    if (!req.user || req.user.role > 0)
       return res.send({ msg: "Unauthorized" });
     next();
   },

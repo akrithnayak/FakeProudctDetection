@@ -14,8 +14,10 @@ export const login = (credentials) => {
   })
     .then(async (response) => {
       var data = await response.json();
-      cookies.set("user", data.resObject);
-      cookies.set("token", data.token);
+      if (data.resObject && data.token) {
+        cookies.set("user", data.resObject);
+        cookies.set("token", data.token);
+      }
       return data;
     })
     .catch((err) => console.log(err));
