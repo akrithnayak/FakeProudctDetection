@@ -3,6 +3,9 @@ const { web3, contract } = require("../helpers/web3");
 
 exports.addProduct = (req, res) => {
   var prodname = req.body.productName;
+  if (!prodname || prodname.length == 0) {
+    return res.send({ msg: "Adding product failed" });
+  }
   var username = req.user.name;
   var email = req.user.email;
   var details =

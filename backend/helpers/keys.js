@@ -105,7 +105,7 @@ var contractAbi = [
   },
 ];
 
-var contractAddress = "0xe64bf317AB2fDD4Aa52493BD30835DCEE7734d54";
+var contractAddress = "0x6133680F3E3b71bEb246E311f60389d2302cE157";
 
 module.exports = {
   contractAbi,

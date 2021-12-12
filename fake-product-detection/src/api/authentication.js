@@ -86,6 +86,14 @@ export const updateShipment = (data) => {
     .catch((err) => console.log(err));
 };
 
+export const logout = () => {
+  if (cookies.get("user")) {
+    cookies.remove("user");
+    cookies.remove("token");
+  }
+  return true;
+};
+
 export const isAuthenticated = () => {
   if (cookies.get("user"))
     return { user: cookies.get("user"), token: cookies.get("token") };

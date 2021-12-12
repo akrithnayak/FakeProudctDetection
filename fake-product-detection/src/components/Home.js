@@ -4,6 +4,7 @@ import { isAuthenticated } from "../api/authentication";
 import { getProduct } from "../api/authentication";
 import Navbar from "./Navbar";
 import "../css/Home.css";
+import getNavItems from "../helper";
 
 class Home extends Component {
   constructor(props) {
@@ -48,13 +49,7 @@ class Home extends Component {
     }
     return (
       <>
-        <Navbar
-          items={[
-            { name: "Search", link: "/" },
-            { name: "Add Product", link: "/add-product" },
-            { name: "Update Shipment", link: "/update-shipment" },
-          ]}
-        />
+        <Navbar items={getNavItems()} />
         <div className="home">
           <div className="name">
             <h1>DetectOP</h1>

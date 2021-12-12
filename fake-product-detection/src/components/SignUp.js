@@ -52,6 +52,7 @@ class SignUp extends Component {
             { name: "Login", link: "/sign-in" },
             { name: "SignUp", link: "/sign-up" },
           ]}
+          auth={true}
         />
         <div className="auth-wrapper">
           <div className="auth-inner">

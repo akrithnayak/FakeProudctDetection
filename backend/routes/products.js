@@ -12,6 +12,11 @@ const router = express.Router();
 router.post(
   "/add/product",
   passport.authenticate("jwt", { session: false }),
+  (req, res, next) => {
+    if (!req.user || req.user.role > 1)
+      return res.send({ msg: "Unauthorized" });
+    next();
+  },
   addProduct
 );
 
@@ -26,6 +31,11 @@ router.post(
   "/scanshipment",
   passport.authenticate("jwt", { session: false }),
   upload.single("qrcode"),
+  (req, res, next) => {
+    if (!req.user || req.user.role > 1)
+      return res.send({ msg: "Unauthorized" });
+    next();
+  },
   scanShipment
 );
 

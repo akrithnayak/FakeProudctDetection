@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Navigate } from "react-router-dom";
 import { isAuthenticated, updateShipment } from "../api/authentication";
+import getNavItems from "../helper";
 import Navbar from "./Navbar";
 
 class UpdateShipment extends Component {
@@ -50,13 +51,7 @@ class UpdateShipment extends Component {
     }
     return (
       <>
-        <Navbar
-          items={[
-            { name: "Search", link: "/" },
-            { name: "Add Product", link: "/add-product" },
-            { name: "Update Shipment", link: "/update-shipment" },
-          ]}
-        />
+        <Navbar items={getNavItems()} />
         <div className="pt-5 mt-5">
           <div className="auth-inner">
             <div>
