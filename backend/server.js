@@ -16,8 +16,8 @@ const prodRoutes = require("./routes/products");
 
 app.use(passport.initialize());
 app.use(bodyParser.json());
-app.use(cookieparser());
 app.use(cors());
+app.use(cookieparser());
 app.use(express.json());
 
 app.use("/", authRoutes);

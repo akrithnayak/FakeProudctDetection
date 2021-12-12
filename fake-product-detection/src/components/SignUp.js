@@ -47,7 +47,12 @@ class SignUp extends Component {
     }
     return (
       <>
-        <Navbar />
+        <Navbar
+          items={[
+            { name: "Login", link: "/sign-in" },
+            { name: "SignUp", link: "/sign-up" },
+          ]}
+        />
         <div className="auth-wrapper">
           <div className="auth-inner">
             <div>

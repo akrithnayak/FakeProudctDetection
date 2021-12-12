@@ -53,6 +53,39 @@ export const getProduct = (product) => {
     .catch((err) => console.log(err));
 };
 
+export const addProduct = (product) => {
+  let auth = isAuthenticated();
+  return fetch(`${API}/add/product`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${auth ? auth.token : ""}`,
+    },
+    body: JSON.stringify(product),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
+export const updateShipment = (data) => {
+  let auth = isAuthenticated();
+  return fetch(`${API}/scanshipment`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${auth ? auth.token : ""}`,
+    },
+    body: data,
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => console.log(err));
+};
+
 export const isAuthenticated = () => {
   if (cookies.get("user"))
     return { user: cookies.get("user"), token: cookies.get("token") };
