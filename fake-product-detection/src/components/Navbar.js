@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { logout } from "../api/authentication";
+import "../css/Navbar.css";
 
 function Navbar(props) {
   const [loggedIn, setloggedIn] = useState(false);
@@ -15,18 +16,21 @@ function Navbar(props) {
     return <Navigate to="/sign-in" />;
   } else
     return (
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+      <nav className="navbar navbar-expand-lg fixed-top">
         <div className="container">
-          <Link className="navbar-brand" to={"/"}>
-            Detect.op
+          <Link className="navbar-brand nametag" to={"/"}>
+            DetectOP
           </Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul className="navbar-nav" style={{ width: "100%" }}>
+            <ul
+              className="navbar-nav  ml-auto authpage"
+              style={{ width: "100%" }}
+            >
               {props.items &&
                 props.items.map((item, index) => {
                   return (
                     <li className="nav-item" key={index}>
-                      <Link className="nav-link" to={item.link}>
+                      <Link className="nav-link nametags" to={item.link}>
                         {item.name}
                       </Link>
                     </li>
@@ -38,7 +42,11 @@ function Navbar(props) {
                     <button
                       type="submit"
                       onClick={onSubmit}
-                      className="nav-link btn btn-danger btn-sm btn-block"
+                      className="nav-link btn btn-sm btn-block"
+                      style={{
+                        borderBottom: "1px solid white",
+                        color: "white",
+                      }}
                     >
                       Logout
                     </button>

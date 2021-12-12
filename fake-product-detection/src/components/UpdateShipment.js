@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 import { isAuthenticated, updateShipment } from "../api/authentication";
 import getNavItems from "../helper";
 import Navbar from "./Navbar";
+import "../css/UpdateShipment.css";
 
 class UpdateShipment extends Component {
   constructor(props) {
@@ -52,63 +53,71 @@ class UpdateShipment extends Component {
     return (
       <>
         <Navbar items={getNavItems()} />
-        <div className="pt-5 mt-5">
-          <div className="auth-inner">
-            <div>
-              <h3>Update Shipment Details</h3>
+        <div className="updateShipmentPage">
+          <div className="updateShipment">
+            <div className="auth-inner">
+              <div>
+                <h3 className="logTitle">UPDATE SHIPMENT DETAILS</h3>
 
-              <div className="form-group mt-3">
-                <label>Product Id</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter the product id"
-                  name="id"
-                  value={this.state.productId}
-                  onChange={(e) => this.handleChange("productId", e)}
-                />
-                <p>OR</p>
-                <input
-                  type="file"
-                  id="image"
-                  name="qrcode"
-                  className="m-2"
-                  placeholder="Scan QR code"
-                  accept="image"
-                  onChange={(e) => this.handleChange("qrcode", e)}
-                />
-              </div>
-              <div className="form-group mt-3">
-                <label>Location</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter the location"
-                  name="location"
-                  value={this.state.location}
-                  onChange={(e) => this.handleChange("location", e)}
-                />
-              </div>
+                <div className="form-group mt-3">
+                  <label>PRODUCT ID</label>
+                  <br />
+                  <input
+                    type="text"
+                    className="formInput"
+                    placeholder="Enter the product id"
+                    name="id"
+                    value={this.state.productId}
+                    onChange={(e) => this.handleChange("productId", e)}
+                  />
+                  <h4 className="orr">OR</h4>
+                  <input
+                    type="file"
+                    id="image"
+                    name="qrcode"
+                    className="m-2"
+                    placeholder="Scan QR code"
+                    accept="image"
+                    onChange={(e) => this.handleChange("qrcode", e)}
+                  />
+                </div>
+                <div className="form-group mt-3">
+                  <label>LOCATION</label>
+                  <br />
+                  <input
+                    type="text"
+                    className="formInput"
+                    placeholder="Enter the location"
+                    name="location"
+                    value={this.state.location}
+                    onChange={(e) => this.handleChange("location", e)}
+                  />
+                </div>
 
-              <button
-                type="submit"
-                className="btn btn-dark btn-lg btn-block mt-3"
-                onClick={this.onSubmit}
-              >
-                Submit
-              </button>
+                <button
+                  type="submit"
+                  className="btn butn btn-dark btn-lg btn-block mt-3"
+                  onClick={this.onSubmit}
+                >
+                  SUBMIT
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        <div
-          className="text-success"
-          style={{
-            width: "100%",
-            justifyContent: "center",
-            display: this.state.fetchedResults ? "flex" : "none",
-          }}
-        >
-          <p className="text-align-center">{this.state.message}</p>
+          <div
+            className="text-success"
+            style={{
+              width: "100%",
+              height: "100%",
+              alignItems: "center",
+              justifyContent: "center",
+              display: this.state.fetchedResults ? "flex" : "none",
+            }}
+          >
+            <p className="text-align-center" style={{ color: "white" }}>
+              {this.state.message}
+            </p>
+          </div>
         </div>
       </>
     );
