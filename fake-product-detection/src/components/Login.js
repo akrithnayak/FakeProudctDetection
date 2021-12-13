@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Navigate } from "react-router-dom";
 import { isAuthenticated, login } from "../api/authentication";
 import Navbar from "./Navbar";
+import "../css/Login.css";
 
 class Login extends Component {
   constructor(props) {
@@ -49,42 +50,46 @@ class Login extends Component {
           ]}
           auth={true}
         />
-        <div className="auth-wrapper">
-          <div className="auth-inner">
-            <div>
-              <h3>Log in</h3>
+        <div className="login_page">
+          <div className="login">
+            <div className="auth-inner">
+              <div>
+                <h3 className="logTitle">LOGIN</h3>
 
-              <div className="form-group mt-3">
-                <label>Email</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  placeholder="Enter email"
-                  name="email"
-                  value={this.state.email}
-                  onChange={(e) => this.handleChange("email", e)}
-                />
+                <div className="form-group mt-3">
+                  <label>EMAIL</label>
+                  <br />
+                  <input
+                    type="email"
+                    className="formInput"
+                    placeholder="Enter email"
+                    name="email"
+                    value={this.state.email}
+                    onChange={(e) => this.handleChange("email", e)}
+                  />
+                </div>
+
+                <div className="form-group mt-3">
+                  <label>PASSWORD</label>
+                  <br />
+                  <input
+                    type="password"
+                    className="formInput"
+                    placeholder=""
+                    name="password"
+                    value={this.state.password}
+                    onChange={(e) => this.handleChange("password", e)}
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="btn btn-dark btn-lg btn-block mt-3 butn"
+                  onClick={this.onSubmit}
+                >
+                  LOGIN
+                </button>
               </div>
-
-              <div className="form-group mt-3">
-                <label>Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder=""
-                  name="password"
-                  value={this.state.password}
-                  onChange={(e) => this.handleChange("password", e)}
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="btn btn-dark btn-lg btn-block mt-3"
-                onClick={this.onSubmit}
-              >
-                Log In
-              </button>
             </div>
           </div>
         </div>

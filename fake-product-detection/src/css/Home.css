@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 
 .home {
   box-sizing: border-box;
@@ -8,7 +8,7 @@
   align-items: center;
   min-height: 100vh;
 
-  background-image: url("../images/home.jpg"), url("../images/mask.jpg");
+  background-image: url("../images/home.png"), url("../images/mask.jpg");
   background-blend-mode: screen;
   background-size: 65vw, 95vw;
   background-position: 30vw 10vh, 18vw;
@@ -63,4 +63,140 @@ p {
   height: 50px;
   border: 2px solid #bf9962;
   padding: 10px 20px;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+.home {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background-image: url("../images/home.png");
+  background-blend-mode: screen;
+  background-size: cover;
+  /* background-size: 100vw 120vh; */
+  /* background-position: 30vw 10vh, 18vw; */
+  background-repeat: no-repeat;
+}
+.name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 50px;
+  display: flex;
+  margin-top: 150px;
+  /* height: 100%; */
+  /* align-items: center; */
+  justify-content: center;
+  z-index: 100;
+}
+.name h1 {
+  position: relative;
+  color: #f4fbfd;
+  text-decoration: none;
+  font-size: 9em;
+  font-family: "Kaushan Script", cursive;
+  border-bottom: 5px solid aliceblue;
+}
+.search {
+  /* margin-top: 50vh;
+  margin-left: 20px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 40px 50px;
+  height: 100%;
+  z-index: 200;
+}
+
+#productId {
+  width: 400px;
+  /* border-radius: 99px; */
+  height: 50px;
+  border-bottom: 5px solid #bebbb6;
+  padding: 20px;
+  color: white;
+}
+
+input::placeholder {
+  color: #bebbb6;
+  font-size: large;
+}
+
+p {
+  font-size: 50px;
+  font-family: serif;
+  width: 400px;
+  text-align: center;
+  margin-top: 10px;
+  color: #dbb784;
+}
+
+.scanCode {
+  cursor: pointer;
+  width: 400px;
+  /* border-radius: 99px; */
+  height: 50px;
+  border-bottom: 5px solid #bebbb6;
+  padding: 0px 20px;
+  color: #bebbb6;
+  font-size: large;
+  cursor: pointer;
+}
+
+.scanCode::-webkit-file-upload-button {
+  background-color: rgb(183, 180, 180);
+  cursor: pointer;
+}
+
+.scanCode::-webkit-file-upload-button:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.sub {
+  position: absolute;
+  bottom: 35%;
+  /* border: 1px solid springgreen; */
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.sub button {
+  width: 300px;
+  border: 1px solid grey;
+  font-family: "Lucida Sans";
+}
+
+#displayBox {
+  background-image: linear-gradient(
+    to left top,
+    #051937,
+    #17122a,
+    #1b0d1d,
+    #180712,
+    #0f0407
+  );
+}
+.details {
+  color: white;
+}
+
+/* //////////////////////////
+ */
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

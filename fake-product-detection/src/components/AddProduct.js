@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 import { isAuthenticated, addProduct } from "../api/authentication";
 import getNavItems from "../helper";
 import Navbar from "./Navbar";
+import "../css/AddProduct.css";
 
 class AddProduct extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class AddProduct extends Component {
   }
 
   onSubmit() {
+    console.log(this.state);
     addProduct({ productName: this.state.productName })
       .then((res) => {
         console.log(res);
@@ -45,55 +47,61 @@ class AddProduct extends Component {
     return (
       <>
         <Navbar items={getNavItems()} />
-        <div className="pt-5 mt-5">
-          <div className="auth-inner">
-            <div>
-              <h3>Add Product</h3>
+        <div className="addProPage">
+          <div className=" addProduct">
+            <div className="auth-inner">
+              <div>
+                <h3 className="addProTitle">Add Product</h3>
 
-              <div className="form-group mt-3">
-                <label>Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Enter the product"
-                  name="name"
-                  value={this.state.productName}
-                  onChange={(e) => this.handleChange("productName", e)}
-                />
+                <div className="form-group mt-3">
+                  <label>NAME</label>
+                  <br />
+                  <input
+                    type="text"
+                    className="formInput"
+                    placeholder="Enter the product"
+                    name="name"
+                    value={this.state.productName}
+                    onChange={(e) => this.handleChange("productName", e)}
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="btn butn btn-dark btn-lg btn-block mt-3"
+                  onClick={this.onSubmit}
+                >
+                  Submit
+                </button>
               </div>
-
-              <button
-                type="submit"
-                className="btn btn-dark btn-lg btn-block mt-3"
-                onClick={this.onSubmit}
-              >
-                Submit
-              </button>
             </div>
           </div>
-        </div>
-        <div
-          style={{
-            display: this.state.productAdded ? "flex" : "none",
-            width: "100%",
-            justifyContent: "center",
-          }}
-        >
-          <div className="card mt-5">
-            <img
-              src={this.state.productDetails.url}
-              alt=""
-              height="200px"
-              width="200px"
-              style={{ margin: "auto" }}
-            />
-            <div className="card-body">
-              <h5 className="card-title">
-                Product name: {this.state.productDetails.name}
-              </h5>
-              <h6 className="card-text">
-                Product Id: {this.state.productDetails.id}
-              </h6>
+          <div
+            style={{
+              display: this.state.productAdded ? "flex" : "none",
+              width: "100%",
+              height: "100%",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            className="qrcode"
+          >
+            <div className="card mt-5 ">
+              <img
+                src={this.state.productDetails.url}
+                alt=""
+                height="200px"
+                width="200px"
+                style={{ margin: "auto" }}
+              />
+              <div className="card-body">
+                <h5 className="card-title">
+                  Product name: {this.state.productDetails.name}
+                </h5>
+                <h6 className="card-text">
+                  Product Id: {this.state.productDetails.id}
+                </h6>
+              </div>
             </div>
           </div>
         </div>

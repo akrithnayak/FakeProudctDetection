@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+
+.signup_page {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/Detect\ OP.png");
+  /* background-blend-mode: screen; */
+  background-repeat: no-repeat;
+  /* background-size: 100vw 100vh; */
+  background-color: black;
+  background-size: cover;
+  background-blend-mode: screen;
+}
+
+h3,
+label {
+  color: rgb(21, 2, 130);
+  opacity: 90%;
+}
+
+.signup {
+  position: absolute;
+  top: 25%;
+  right: 10%;
+}
+
+.signup .auth-inner {
+  background-image: url("../images/paper.png");
+  background-size: 38em;
+  background-position: -42px -55px;
+  background-color: transparent;
+  height: 38em;
+  width: 33em;
+  /* border: 5px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: -6.5em;
+}
+
+.logTitle {
+  padding-top: 5px;
+  margin-bottom: -15px;
+  text-align: center;
+  font-family: "Rye", cursive;
+  color: crimson;
+}
+
+.signup input {
+  background-color: transparent;
+  border: 10px;
+  border-bottom: 2px solid rgb(31, 1, 89);
+  outline: none;
+}
+
+.butn {
+  width: 100%;
+}

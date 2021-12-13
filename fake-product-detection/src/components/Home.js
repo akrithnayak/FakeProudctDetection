@@ -77,25 +77,64 @@ class Home extends Component {
                 onChange={(e) => this.handleChange("qrcode", e)}
               />
             </div>
-            <button
-              type="submit"
-              className="btn btn-dark btn-lg btn-block m-3"
-              onClick={(e) => this.onSubmit(e)}
-            >
-              Search
-            </button>
           </div>
+        </div>
+        <div
+          className="arrowbox"
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <div
+            className="arrow"
             style={{
-              width: "100%",
               display: this.state.fetchedResults ? "flex" : "none",
+              position: "absolute",
+              bottom: "10%",
+
+              justifyContent: "center",
+              alignItems: "center",
+              color: "white",
+              fontSize: "35px",
+              padding: "0 15px 0 15px",
+              border: "2px solid white",
+              borderRadius: "50%",
+              boxShadow: "  rgb(195 179 195) 0px 0px 30px 20px",
             }}
           >
-            <p
-              className="bg-white"
-              dangerouslySetInnerHTML={{ __html: this.state.message }}
-            ></p>
+            &#8595;
           </div>
+        </div>
+        <div
+          style={{
+            width: "100%",
+            display: this.state.fetchedResults ? "flex" : "none",
+            backgroundImage:
+              "linear-gradient(to left top, #051937, #001b2d, #001a1c, #00160b, #0a0f00);",
+          }}
+          id="displayBox"
+        >
+          <p
+            className="details"
+            style={{
+              width: "100%",
+              margin: 0,
+              padding: "150px",
+            }}
+            dangerouslySetInnerHTML={{ __html: this.state.message }}
+          ></p>
+        </div>
+        <div className="sub">
+          <button
+            type="submit"
+            className="btn btn-dark btn-lg btn-block m-3 subs"
+            onClick={(e) => this.onSubmit(e)}
+          >
+            SEARCH
+          </button>
         </div>
       </>
     );

@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+.navbar {
+  background: rgba(10, 7, 26, 0.25);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.9px);
+  -webkit-backdrop-filter: blur(7.9px);
+  border-bottom: 0.1px solid rgba(44, 34, 34, 0.3);
+}
+
+.nametag {
+  color: white;
+  font-family: "Pacifico", cursive;
+}
+.nametag:hover {
+  color: rgb(250, 239, 186);
+}
+
+.nametags {
+  color: rgb(185, 185, 185);
+}
+
+.authpage {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  color: white;
+}
