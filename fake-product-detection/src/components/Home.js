@@ -102,7 +102,6 @@ class Home extends Component {
               padding: "0 15px 0 15px",
               border: "2px solid white",
               borderRadius: "50%",
-              boxShadow: "  rgb(195 179 195) 0px 0px 30px 20px",
             }}
           >
             &#8595;
